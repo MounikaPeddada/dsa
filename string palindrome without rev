@@ -1,0 +1,20 @@
+bool strpali2(int i,string &str,int n)
+{
+    if(i>n/2)
+    return true;
+    if(str[i]!=str[n-i-1])
+    return false;
+    strpali2(i+1,str,n);
+}
+int main()
+{
+    string str;
+    cin>>str;
+    int n=str.size();
+    strpali2(0,str,n);
+    if (strpali2(0,str,n))
+    cout<<"palindrome";
+    else
+    cout<<"not palindrome";
+
+}
