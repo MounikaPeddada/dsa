@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+void strpali(int i, string &str,int n)
+{
+    char temp;
+    if(i>n/2) //pali by reversing the string
+    return;
+    temp=str[i];
+    str[i]=str[n-1-i];
+    str[n-1-i]=temp;
+    strpali(i+1,str,n);
+}
+int main()
+{
+    string str;
+    cin>>str;
+    int n=str.size();
+    string old = str;
+    strpali(0,str,n);
+    if (str==old)
+    cout<<"string is palindrome"; 
+    else
+    cout<<"string is not palindrome";
+}
