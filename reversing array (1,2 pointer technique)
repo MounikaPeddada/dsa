@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+void swap(int a,int b,int arr[],int n)
+{
+    int temp;
+    if(a>=b)
+    return;
+    temp=arr[b];
+    arr[b]=arr[a];
+    arr[a]=temp;
+    swap(a+1,b-1,arr,n);
+}
+void swap_1pointer(int i,int arr[],int n)
+{
+    int temp;
+    if(i>n/2)
+    return;
+    temp=arr[i];
+    arr[i]=arr[n-i-1];
+    arr[n-i-1]=temp;
+    swap_1pointer(i+1,arr,n);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+    cin>>arr[i];
+    }
+    swap_1pointer(0,arr,n);
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
