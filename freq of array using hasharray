@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    cin>>arr[i];
+
+    //pre compute
+    int hash[13]={0}; //here in ques max value of arr or max size of array is considered to be 12
+    for(int i=0;i<n;i++)
+    hash[arr[i]]++;
+
+
+    int q,num;
+    cin>>q;
+    while(q--)
+    {
+        cin>>num;
+        cout<<hash[num]<<endl;
+    }
+    return 0;
+
+    
+}
