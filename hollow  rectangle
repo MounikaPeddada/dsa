@@ -1,0 +1,26 @@
+
+#include<stdio.h>
+int main()
+{
+    int l,b,i,j;
+    printf("enter l and b value");
+    scanf("%d%d",&l,&b);
+    for(i=0;i<b;i++)
+    {
+        for(j=0;j<l;j++)
+        {
+            if(i==0 || i==b-1)
+            {
+                printf("* ");
+            }
+            else
+            {
+                if(j==0 || j==l-1)
+                printf("* ");
+                else
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+}
