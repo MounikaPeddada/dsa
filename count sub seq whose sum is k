@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int sub_seq_sum(int ind,int sum,int a[],int n,int s)
+{
+    if(ind==n)
+    {
+        if(sum==s )
+        {
+            return 1;
+        }
+        else return 0;
+    }
+    sum+=a[ind];
+    int l= sub_seq_sum(ind+1,sum,a,n,s);
+    sum-=a[ind];
+    int r = sub_seq_sum(ind+1,sum,a,n,s);
+    return l + r;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    int s,ind=0,sum=0;
+    cin>>s;
+    cout<<sub_seq_sum(0,0,a,n,s)<<endl;
+}
